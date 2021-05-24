@@ -4,10 +4,9 @@ function renderLicenseBadge(license) {
   if(!license) {
     return '';
   }
-  return `
-## Badges
+  return `## Badges
 
-![badge](https:img.shields.io/badge/license-${license.license}-brightgreen)
+![badge](https:img.shields.io/badge/license-${license}-brightgreen)
   `
 }
 
@@ -17,11 +16,10 @@ function renderLicenseLink(license) {
   if(!license) {
     return '';
   }
-  return `
-  ## License
+  return `## License
 
-  ![badge](https:img.shields.io/badge/license-${license.license}-brightgreen)
-  `
+![badge](https:img.shields.io/badge/license-${license}-brightgreen)
+`
 }
 
 // TODO: Create a function that returns the license section of README
@@ -30,17 +28,12 @@ function renderLicenseSection(license) {
   if(!license) {
     return '';
   }
-  return `
-  ## License
-
-  ${renderLicenseLink(license)}
-  `
+  return `${renderLicenseLink(license)}`
 }
 
 // TODO: Create a function to generate markdown for README
 generateMarkdown = input => {
-  return `
-# ${input.title}
+  return `# ${input.title}
 
 ## Table of Contents
 
@@ -53,31 +46,23 @@ generateMarkdown = input => {
 ${input.description}
   
 ## Installation
-
 ${input.installation}
   
 ## Usage
-
 ${input.usuage} 
   
 ## Credits
-
 ${input.credits}
 
-${renderLicenseSection(license)}
-
-${renderLicenseBadge(license)}
-  
+${renderLicenseSection(input.license)}
+${renderLicenseBadge(input.license)}  
 ## Features
-
 ${input.features}
 
 ## Contributing
-
 ${input.contributing}
 
 ## Tests
-
 ${input.test}
 
 ## https://github.com/${input.githubusername}

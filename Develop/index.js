@@ -1,8 +1,6 @@
-// TODO: Include packages needed for this application
 const markDown = require('./utils/generateMarkdown');
 const fs = require('fs');
 const inquirer = require('inquirer')
-// TODO: Create an array of questions for user input
 const promptQuestions = () => {
     return inquirer.prompt([
         {
@@ -75,6 +73,7 @@ const promptQuestions = () => {
         {
             type: 'list',
             name: 'license',
+            message: 'Choose your license if any',
             choices: ['afl-3.0', 'apache-2.0', 'artistic-2.0', 'bsl-1.0', 'bsd-2-clause', 'bsd-3-clause', 'bsd-3-clause-clear', 'cc', 'cc0-1.0', 'cc-by-4.0', 'cc-by-sa-4.0', 'wtfpl', 'ecl-2.0']
         },
         {
@@ -90,7 +89,6 @@ const promptQuestions = () => {
 ])
 };
 
-// TODO: Create a function to write README file
 const writeToFile = (fileName, data) => {
     return new Promise((resolve, reject) => {
         fs.writeFile('./dist/README.md', fileName, data, err => {
@@ -106,19 +104,6 @@ const writeToFile = (fileName, data) => {
     });
 }
 
-// TODO: Create a function to initialize app
-// async function init() {
-//     try {
-//         const answer = await promptQuestions();
-//         writeToFile(answer)
-//         console.log('README successfully created!')
-//     }   catch(err) {
-//         console.log(err)
-//     }
-// }
-
-// // Function call to initialize app
-// init();
 promptQuestions()
 .then(readMeData => {
     return markDown(readMeData)
