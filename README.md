@@ -14,7 +14,8 @@ This application is used to generate a professinol readme after the user answers
 npm init npm install inquirer
   
 ## Usage
-From the command line preform a gitclone fo the repo onto your local machine. From the command line install npm init npm install inquierer 
+From the command line preform a gitclone fo the repo onto your local machine. From the command line install npm init npm install inquierer. Than fron the command line
+enter node index.js answer the prompts and the readme file will be made in the dist folder. 
   
 ## Credits
 Dylan Green
